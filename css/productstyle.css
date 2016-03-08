@@ -1,0 +1,33 @@
+/*productpagina.html*/
+.selected_product_image{
+    float: left;
+    width: 300px;
+    padding-right: 20px;
+}
+
+.geselecteerd_product_beschrijving{
+    float: right;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gerelateerd_producten{
+    clear: both;
+    align-content: center;
+}
+
+.gerelateerd_producten ul{
+    text-align: center;
+}
+
+.gerelateerd_producten li{
+
+    display: inline-block;
+    margin: 30px;
+}
+
+/*Global*/
+.number_textbox{
+    width: 35px;
+}
