@@ -1,18 +1,15 @@
-
-
-      <nav>
-        <ul>
-            <li><a href="index.html">Nieuws</a></li>
-            <li><a href="sale.html">Acties</a></li>
-            <li><a href="about.html" class="active" >Over ons</a></li>
-            <li><a href="vacancies.html">Vacatures</a></li>
-            <li class=""><a href="shop.html">WebShop</a>
-                <ul>
-                    <li><a href="shop.html">Producten</a></li>
-                    <li><a href="cart.html">Winkelwagen</a></li>
-                    <li><a href="payment.html">Afrekenen</a></li>
-                </ul>
-            </li>
-            <li><a href="<?php echo $name ?>.html"><?php echo $name ?></a></li>
-        </ul>
-      </nav>
+<nav>
+    <ul>
+        <li><a href="index.php">Nieuws</a></li>
+        <li><a href="sale.php">Acties</a></li>
+        <li><a href="about.php" class="active" >Over ons</a></li>
+        <li><a href="vacancies.php">Vacatures</a></li>
+        <li class=""><a href="shop.php">WebShop</a>
+            <ul>
+                <li><a href="shop.php">Producten</a></li>
+                <li><a href="cart.php">Winkelwagen</a></li>
+                <li><a href="payment.php">Afrekenen</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
