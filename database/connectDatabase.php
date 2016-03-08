@@ -23,3 +23,28 @@ function getConnection(){
 
     return $dbConn;
 }
+
+function getDataArray($sql){
+    $dbConn = getConnection();
+
+    $tsql = $sql;
+    $result = sqlsrv_query( $dbConn, $tsql, null);
+
+    $data = array();
+
+    if ( $result === false)
+    {
+        die( print_r( sqlsrv_errors() ) );
+    }
+
+    $i = 0;
+    while( $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC))
+    {
+        $data[$i] = $row ;
+        $i++;
+    }
+    sqlsrv_free_stmt($result);
+    sqlsrv_close($dbConn);
+
+    return $data;
+}
