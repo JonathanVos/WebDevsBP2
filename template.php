@@ -7,6 +7,9 @@ $name = "world";
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/productstyle.css" />
+    <link rel="stylesheet" type="text/css" href="css/registerstyle.css" />
+    <link rel="stylesheet" type="text/css" href="css/shopstyle.css" />
     <title>VB BV. voor al uw VerkeersBorden</title>
 </head>
 
