@@ -1,5 +1,5 @@
 <?php 
-if(!isset($content){
+if(!isset($content)){
 	$content = "";
 }
 
