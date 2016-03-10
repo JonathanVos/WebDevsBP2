@@ -1,7 +1,7 @@
-<?php
 
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
+<?php
+if(session_status() == PHP_SESSION_NONE){
+  session_start();
 }
 if(!isset($_SESSION['username'])){
     echo '      <form class="login" method="post" action="checkLogin.php">
@@ -20,7 +20,8 @@ if(!isset($_SESSION['username'])){
 else{
     echo '      <form class="login" method="post" action="log_out.php">
             <fieldset>
-              <legend>Hello '.$_SESSION['username'].'</legend>
+              <a href="details.php">Gegevens</a>
+              <legend>Hallo '.$_SESSION['username'].'</legend>
               <input type="submit" value="Log out" />
             </fieldset>
           </form>';
