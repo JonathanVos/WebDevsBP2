@@ -9,8 +9,15 @@
  */
 
 function getConnection(){
-    $serverName = "(local)\sqlexpress";
+    $jonathan = false;
+
     $connectionInfo = array( "Database"=>"WebShop", "UID"=>"sa", "PWD"=>"");
+    $serverName = "(local)\sqlexpress";
+
+    if($jonathan){
+        $connection_info = array("Database"=>"WebShop", "UID"=>"sa", "PWD"=>"a");
+        $serverName = "USER\SQLEXPRESS";
+    }
     $dbConn = sqlsrv_connect( $serverName, $connectionInfo);
     if($dbConn)
     {

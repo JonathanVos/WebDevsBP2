@@ -2,8 +2,8 @@
 session_start();
 
 if(isset($_SESSION['username'])){
-	$connection_info = array("Database"=>"WebShop", "UID"=>"sa", "PWD"=>"a");
-	$link = sqlsrv_connect("USER\SQLEXPRESS", $connection_info);
+	require_once ('database/connectDatabase.php');
+	$link = getConnection();
 	if(!$link){
 		echo "FATAL: Connection failed.";
 		die ("Bleargh!");
