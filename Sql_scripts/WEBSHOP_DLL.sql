@@ -44,3 +44,10 @@ CREATE TABLE Product_Catogories(
 		ON UPDATE CASCADE
 		ON DELETE CASCADE,
 )
+
+CREATE VIEW Product_with_catogory AS
+SELECT P.product_id, product_name, P.description,P.price, image_name, stock, C.name AS catogory_name
+FROM Products P LEFT JOIN Product_Catogories PC
+ON P.product_id = PC.product_id
+LEFT JOIN Catogory C
+ON C.catogory_id = PC.catogory_id

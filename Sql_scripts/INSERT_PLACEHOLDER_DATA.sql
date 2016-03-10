@@ -13,4 +13,5 @@ INSERT INTO Catogory VALUES (1, 'Informatie Borden', 'Borden voor als je de mens
 INSERT INTO Catogory VALUES (2, 'Verplichten Borden', 'Borden voor als je de mens iets moet doen')
 
 INSERT INTO Product_catogories VALUES (0, 2)
+INSERT INTO Product_Catogories VALUES (1, 1)
 
