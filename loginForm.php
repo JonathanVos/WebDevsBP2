@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 if(!isset($_SESSION['username'])){
     echo '      <form class="login" method="post" action="checkLogin.php">
             <fieldset>
