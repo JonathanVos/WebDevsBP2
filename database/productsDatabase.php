@@ -31,12 +31,10 @@ function getProducts($limit = 0, $where = "")
 function getProductCount(){
     $sql = "SELECT COUNT(*) FROM Products";
 
-
     return getDataArray($sql)[0][''];
 }
 
 function getCatogories(){
-
     $sql = "SELECT name FROM Catogory";
 
     return getDataArray($sql);
@@ -50,7 +48,7 @@ function getCatogories(){
  */
 function getProduct($product_id)
 {
-    $var = getDataArray("select * from Products WHERE product_id =" . $product_id);
+    $var = getDataArray("select * from Product_with_catogory WHERE product_id =" . $product_id);
     if (count($var) > 0)
         return $var[0];
     else
@@ -70,7 +68,7 @@ function getProductSmallHtml($product)
                     <div class="productitem">
                         <a href="product.php?id=' . $product['product_id'] . '"> <img src="img/verkeersborden/' . $product['image_name'] . '_klein.jpg" alt="' . $product['image_name'] . '"/></a><br>
                             ' . $product['product_name'] . '<br>
-                        <form action="carthandler.php" method="post"> ' . $product['price'] . '
+                        <form action="carthandler.php" method="post"> &euro;' . $product['price'] . '
                             <input type="hidden" name="product_id" value="' . $product['product_id'] . '">
                             <button type="submit">In winkelwagen</button>
                         </form>
@@ -110,8 +108,8 @@ function getProductsBigHtml($product)
           <p>
             <form method="post" action="carthandler.php">
               <strong>Aantal</strong>
-              <input type="text" name="number_products" class="number_textbox" value="1">
-              <input type="hidden" name="product_id">
+              <input type="text" name="count" class="number_textbox" value="1">
+              <input type="hidden" name="product_id" value="'.$product['product_id'] .'">
               <button type="submit">Toevoegen aan winkelwagen</button>
             </form>
           </p>

@@ -12,6 +12,7 @@ if(isset($_POST['product_id']) && ctype_digit(strval($_POST['product_id']))){
     $productId = (int)$_POST['product_id'];
 
     $count = 1;
+
     if(isset($_POST['count']) && ctype_digit(strval($_POST['count']))){
         $count = (int)$_POST['count'];
     }
@@ -21,6 +22,11 @@ if(isset($_POST['product_id']) && ctype_digit(strval($_POST['product_id']))){
 }
 elseif(isset($_GET['clear'])){
     setCart(array());
+    header('refresh:0;url=cart.php');
+}
+elseif(isset($_GET['delete'])){
+
+    removeFromCart($_GET['delete']);
     header('refresh:0;url=cart.php');
 }
 else{
