@@ -14,6 +14,7 @@ $name = "world";
 </head>
 
 <body>
+    <?php require('cartformsmall.php')?>
     <header>
         <?php
         require 'logo.php';
