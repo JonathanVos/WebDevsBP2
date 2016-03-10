@@ -28,6 +28,7 @@ else{
     }
 
     $content .= '</table>';
+    $content .= '<a href="payment.php">Afrekenen</a>';
 }
 
 

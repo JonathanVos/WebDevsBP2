@@ -17,7 +17,7 @@ function addToCart($productId, $count){
     foreach($cart as $key => $product){
         if($product[0] == $productId){
             $found = true;
-            $cart[$key][1] = $count;
+            $cart[$key][1] += $count;
         }
     }
 
@@ -71,10 +71,10 @@ function getCartItemHtml($cartItems){
           <td>'.$product['product_name'].'</td>
           <td>'.$product['price']  .'</td>
           <td>
-            <input type="number" name="quantity" min="1" max="1000" value="'.$cartItems[1].'" />
+            '.$cartItems[1].'
           </td>
           <td>'.$product['price'] * $cartItems[1] .'</td>
-          <td><button>Delete</button></td>
+          <td><a href="carthandler.php?delete='.$cartItems[0].'">Haal weg</a></td>
         </tr>';
 
     return $html;
