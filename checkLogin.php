@@ -10,7 +10,7 @@ if(!$link){
 echo 'Connection Success!/n';
 
 $username = $_POST['username'];
-$password = /*hash("sha256", */$_POST['password']/*)*/;
+$password = hash("sha256", $_POST['password']);
 
 echo "$username $password/n";
 
