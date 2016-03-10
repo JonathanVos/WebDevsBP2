@@ -15,6 +15,9 @@ INSERT INTO Catogory VALUES (0, 'Waarschuwings Borden', 'Borden voor als je de m
 INSERT INTO Catogory VALUES (1, 'Informatie Borden', 'Borden voor als je de mens informatie wil geven')
 INSERT INTO Catogory VALUES (2, 'Verplichten Borden', 'Borden voor als je de mens iets moet doen')
 
-INSERT INTO Product_catogories VALUES (0, 2)
+INSERT INTO Product_catogories VALUES (4, 0) --Bandgevaar in waarschuwing
+INSERT INTO Product_Catogories VALUES (5, 1) --Betalen parkeren in informatie 
+INSERT INTO Product_Catogories VALUES (0, 2)
 INSERT INTO Product_Catogories VALUES (1, 2)
 INSERT INTO Product_Catogories VALUES (2, 2)
+INSERT INTO Product_Catogories VALUES (3, 2)
