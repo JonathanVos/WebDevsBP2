@@ -22,7 +22,7 @@ $content = '';
 $content .= '
     <div class="searchmenu">
      <form method="get" target="_self" action="shop.php">
-          <input type="text" name="search">
+          <input type="text" name="search" value="'.(isset($_GET['search']) ? $_GET['search'] : "" ).'">
           <button type="submit">Search</button>
           <br>
     '.getProductCount().' Producten | Toon
