@@ -1,11 +1,7 @@
 <?php
-<<<<<<< HEAD
-if(session_status() == PHP_SESSION_NONE){
-  session_start();
-=======
+
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
->>>>>>> 45ee6526fc61d3e4cc9c98adeec35fb2a2d5268f
 }
 if(!isset($_SESSION['username'])){
     echo '      <form class="login" method="post" action="checkLogin.php">
