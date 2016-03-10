@@ -1,7 +1,4 @@
 <?php 
-if(!isset($content)){
-	$content = "";
-}
-
+$content = "";
 require 'template.php';
 ?>

@@ -6,7 +6,6 @@
 	}
 
 	else{
-		$content = "Login success.";
 		header('location:index.php');
 	}
 ?>
