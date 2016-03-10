@@ -2,18 +2,33 @@
 session_start();
 
 if(isset($_SESSION['username'])){
+	$connection_info = array("Database"=>"WebShop", "UID"=>"sa", "PWD"=>"a");
+	$link = sqlsrv_connect("USER\SQLEXPRESS", $connection_info);
+	if(!$link){
+		echo "FATAL: Connection failed.";
+		die ("Bleargh!");
+	}
+	echo "Connection Success!\n";
 
-	// get stuff from database
 	$username = $_SESSION['username'];
-	$geslacht = 'M';
-	$voornaam = 'Jonathan';
-	$tussenvoegsel = '';
-	$achternaam = 'Vos';
-	$email = 'jonathan.vos@hotmail.com';
-	$straatnaam = 'Heemraadstraat';
-	$huisnummer = '6';
-	$postcode = '6525TH';
-	$woonplaats = 'Nijmegen';
+	$sql = "SELECT voornaam, tussenvoegsel, achternaam, straatnaam, huisnummer, postcode, woonplaats, email, geslacht
+			FROM Gebruikers 
+			WHERE gebruikersnaam COLLATE Latin1_General_CS_AS='$username'";
+
+	$result = sqlsrv_query($link, $sql, null, null);
+	$waardes = sqlsrv_fetch_array($result);
+
+	sqlsrv_close($link);
+
+	$voornaam = $waardes['voornaam'];
+	$tussenvoegsel = $waardes['tussenvoegsel'];
+	$achternaam = $waardes['achternaam'];
+	$email = $waardes['email'];
+	$straatnaam = $waardes['straatnaam'];
+	$huisnummer = $waardes['huisnummer'];
+	$postcode = $waardes['postcode'];
+	$woonplaats = $waardes['woonplaats'];
+	$geslacht = $waardes['geslacht'];
 	$telefoon = '0643952455';
 
 	function selectGeslacht($gevraagdGeslacht, $geslacht){
@@ -39,7 +54,7 @@ if(isset($_SESSION['username'])){
                     Oud wachtwoord*<br>
                     <input type="password" name="oldPassword"><br>
                     Nieuw wachtwoord*<br>
-                    <input type="text" name="password"><br>
+                    <input type="text" name="newPassword"><br>
                     Herhaal nieuw wachtwoord*<br>
                     <input type="text"><br>
                     <button type="submit">Nieuw wachtwoord</button>

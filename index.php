@@ -1,4 +1,7 @@
 <?php 
-$content = "";
+if(!isset($content){
+	$content = "";
+}
+
 require 'template.php';
 ?>

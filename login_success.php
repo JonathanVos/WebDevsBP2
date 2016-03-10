@@ -6,7 +6,7 @@
 	}
 
 	else{
-		$username = $_SESSION['username'];
+		$content = "Login success.";
 		header('location:index.php');
 	}
 ?>

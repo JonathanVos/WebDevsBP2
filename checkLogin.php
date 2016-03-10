@@ -7,12 +7,12 @@ if(!$link){
 	echo "FATAL: Connection failed.";
 	die ("Bleargh!");
 }
-echo 'Connection Success!/n';
+echo "Connection Success!\n";
 
 $username = $_POST['username'];
 $password = hash("sha256", $_POST['password']);
 
-echo "$username $password/n";
+echo "$username $password\n";
 
 $sql = "SELECT COUNT(*) 
 		AS 'count' 
@@ -24,12 +24,10 @@ $result = sqlsrv_query($link, $sql, null, null);
 $waarde = sqlsrv_fetch_array($result)['count'];
 if($waarde == 1){
 	$_SESSION['username'] = $username;
-	$_SESSION['password'] = $password;
 	header('location:login_success.php');
 }else{
-	echo "Booh!/n";
+	header('location:loginFail.php');
 }
 
 sqlsrv_close($link);
-//mysql_select_db("USER\SQLEXPRESS") or die ("Ahuargh!");
 ?>
