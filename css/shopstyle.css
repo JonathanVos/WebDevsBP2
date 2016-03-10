@@ -10,10 +10,6 @@
     width: 20%;
 }
 
-.productitem{
-    width: 120px;
-    height: 120px;
-}
 
 .productslist ul{
     text-align: center;
@@ -22,6 +18,11 @@
 .productslist li{
     display: inline-block;
     margin: 30px;
+    width: 200px;
+    height: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .categories ul{

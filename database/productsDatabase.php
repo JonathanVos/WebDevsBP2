@@ -28,6 +28,20 @@ function getProducts($limit = 0, $where = "")
     return getDataArray($sql);
 }
 
+function getProductCount(){
+    $sql = "SELECT COUNT(*) FROM Products";
+
+
+    return getDataArray($sql)[0][''];
+}
+
+function getCatogories(){
+
+    $sql = "SELECT name FROM Catogory";
+
+    return getDataArray($sql);
+}
+
 
 /**
  * Gets a single product
@@ -54,8 +68,8 @@ function getProductSmallHtml($product)
     if (isset($product['product_id'])) {
         $html .= '<li>
                     <div class="productitem">
-                        <a href="product.html?' . $product['product_id'] . '"> <img src="img/verkeersborden/' . $product['image_name'] . '_klein.jpg" alt="' . $product['image_name'] . '"/></a><br>
-                            ' . $product['description'] . '<br>
+                        <a href="product.php?id=' . $product['product_id'] . '"> <img src="img/verkeersborden/' . $product['image_name'] . '_klein.jpg" alt="' . $product['image_name'] . '"/></a><br>
+                            ' . $product['product_name'] . '<br>
                         <form> ' . $product['price'] . '
                             <input type="hidden" name="product_id" value="' . $product['product_id'] . '">
                             <button type="submit">In winkelwagen</button>

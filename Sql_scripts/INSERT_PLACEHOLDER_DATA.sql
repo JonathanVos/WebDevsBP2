@@ -14,8 +14,3 @@ INSERT INTO Catogory VALUES (2, 'Verplichten Borden', 'Borden voor als je de men
 
 INSERT INTO Product_catogories VALUES (0, 2)
 
-SELECT * 
-FROM Products P INNER JOIN Product_catogories PC
-ON P.product_id = PC.product_id
-INNER JOIN Catogory C
-ON C.catogory_id = PC.catogory_id
