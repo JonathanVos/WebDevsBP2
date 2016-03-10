@@ -1,6 +1,17 @@
-<?php 
-$content = '<div class="content">
+<?php
+require_once ('cartfunctions.php');
+
+$content = '';
+
+$count = getCartCount();
+if($count == 0){
+    $content .= 'Winkelwagen is leeg';
+}
+else{
+    $content .= '
+
       <h1>Winkelwagen</h1>
+      <a href="carthandler.php?clear=true">Maak leeg</a>
       <table>
         <tr>
           <th></th>
@@ -9,44 +20,17 @@ $content = '<div class="content">
           <th>Aantal</th>
           <th>Subtotaal</th>
           <th>Verwijder</th>
-        </tr>
-        <tr>
-          <td>
-            <img src="img/verkeersborden/50zone_klein.jpg" alt="" />
-          </td>
-          <td>Verboden parkeren klein</td>
-          <td>25</td>
-          <td>
-            <input type="number" name="quantity" min="1" max="1000" value="1" />
-          </td>
-          <td>25</td>
-          <td><button>Delete</button></td>
-        </tr>
-        <tr>
-          <td>
-            <img src="img/verkeersborden/verboden_parkeren_klein.jpg" alt="" />
-          </td>
-          <td>Verboden parkeren klein</td>
-          <td>25</td>
-          <td>
-            <input type="number" name="quantity" min="1" max="1000" value="1" />
-          </td>
-          <td>25</td>
-          <td>
-            <button>Delete</button>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="3"></td>
-          <td>
-            <button>Herbereken bedrag</button>
-          </td>
-          <td>50</td>
-          <td>
-            <button>Afrekenen</button>
-          </td>
-        </tr>
-      </table>
-    </div>';
+        </tr>';
+
+    $cart  = getCart();
+    foreach($cart as $item){
+        $content .= getCartItemHtml($item);
+    }
+
+    $content .= '</table>';
+}
+
+
+
 require 'template.php';
 ?>

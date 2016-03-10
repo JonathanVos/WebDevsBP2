@@ -53,3 +53,29 @@ function setCart($cart){
 function getCartCount(){
     return count(getCart());
 }
+
+function updateCart(){
+    setCart(getCart());
+}
+
+function getCartItemHtml($cartItems){
+    require_once ('database/productsDatabase.php');
+    $product = getProduct($cartItems[0]);
+
+    $html = '';
+
+    $html .= '        <tr>
+          <td>
+            <img src="img/verkeersborden/'.$product['image_name'].'_klein.jpg" alt="" />
+          </td>
+          <td>'.$product['product_name'].'</td>
+          <td>'.$product['price']  .'</td>
+          <td>
+            <input type="number" name="quantity" min="1" max="1000" value="'.$cartItems[1].'" />
+          </td>
+          <td>'.$product['price'] * $cartItems[1] .'</td>
+          <td><button>Delete</button></td>
+        </tr>';
+
+    return $html;
+}

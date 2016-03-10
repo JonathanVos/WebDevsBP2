@@ -20,10 +20,10 @@ function getProducts($limit = 0, $where = "")
     if (is_int($limit) && $limit > 0)
         $sql .= " TOP " . $limit;
 
-    $sql .= " * FROM Products";
+    $sql .= " * FROM Product_with_catogory";
 
     if (!empty($where))
-        $sql .= " WHERE " . $where;
+        $sql .= " " . $where;
 
     return getDataArray($sql);
 }
@@ -70,7 +70,7 @@ function getProductSmallHtml($product)
                     <div class="productitem">
                         <a href="product.php?id=' . $product['product_id'] . '"> <img src="img/verkeersborden/' . $product['image_name'] . '_klein.jpg" alt="' . $product['image_name'] . '"/></a><br>
                             ' . $product['product_name'] . '<br>
-                        <form> ' . $product['price'] . '
+                        <form action="carthandler.php" method="post"> ' . $product['price'] . '
                             <input type="hidden" name="product_id" value="' . $product['product_id'] . '">
                             <button type="submit">In winkelwagen</button>
                         </form>
@@ -108,7 +108,7 @@ function getProductsBigHtml($product)
             . '</p>
 
           <p>
-            <form>
+            <form method="post" action="carthandler.php">
               <strong>Aantal</strong>
               <input type="text" name="number_products" class="number_textbox" value="1">
               <input type="hidden" name="product_id">

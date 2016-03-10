@@ -6,6 +6,7 @@
  * Time: 10:16
  */
 require_once ('cartfunctions.php');
+updateCart();
 ?>
 
 
