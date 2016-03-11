@@ -35,10 +35,12 @@ if (isset($_SESSION['username']) && getCartCount() > 0) {
             /* Otherwise, rollback the transaction. */
             if ($stmt2) {
                 sqlsrv_commit($conn);
+                removeFromCart($product['product_id']);
             } else {
                 sqlsrv_rollback($conn);
                 echo "Database Error.<br />";
             }
+
 
         } else {
             $content .= $product['product_name'] . " Kon niet worden betaald omdate er niet in genoeg in de vooraad is<br>";
