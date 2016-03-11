@@ -1,4 +1,8 @@
 <?php
+if(session_status() == PHP_SESSION_NONE){
+    session_start();
+}
+
 $content = "";
 require_once ('cartfunctions.php');
 if(getCartCount() == 0){
@@ -17,6 +21,13 @@ else{
     }
 
     $content .= 'Totaal: &euro;'.$totalSum;
+
+    if(isset($_SESSION['username'])){
+        $content .= '<br><a href="paymentcomplete.php">Afreken</a>';
+    }
+    else{
+        $content .= '<br>Je moet inloggen om af te rekenen';
+    }
 }
 
 
