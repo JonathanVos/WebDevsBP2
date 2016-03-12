@@ -51,7 +51,15 @@ function setCart($cart){
 }
 
 function getCartCount(){
-    return count(getCart());
+    $count = 0;
+
+    $cart = getCart();
+
+    foreach ($cart as $key => $product) {
+        $count += $cart[$key][1];
+    }
+
+    return $count;
 }
 
 function updateCart(){
