@@ -14,8 +14,8 @@ $content .= getProductsBigHtml($product);
 $sql = "WHERE catogory_name LIKE '%".$product['catogory_name']."%' AND product_id != ".$product['product_id'];
 $relavent = getProducts(3, $sql);
 
-$content .= '<div class="gerelateerd_producten"> <ul>';
-$content .= '<h2>Relevant</h2>';
+$content .= '<div class="gerelateerd_producten">';
+$content .= '<h2>Relevant</h2> <ul>';
 foreach($relavent AS $rBord){
         $content .= getProductSmallHtml($rBord);
 }

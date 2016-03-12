@@ -104,15 +104,14 @@ function getProductsBigHtml($product)
           ' .
             $vooraadHtml
             . '</p>
+          <br>
 
-          <p>
-            <form method="post" action="carthandler.php">
-              <strong>Aantal</strong>
-              <input type="text" name="count" class="number_textbox" value="1">
-              <input type="hidden" name="product_id" value="'.$product['product_id'] .'">
-              <button type="submit">Toevoegen aan winkelwagen</button>
-            </form>
-          </p>
+          <form method="post" action="carthandler.php">
+            <strong>Aantal</strong>
+            <input type="text" name="count" class="number_textbox" value="1">
+            <input type="hidden" name="product_id" value="'.$product['product_id'] .'">
+            <button type="submit">Toevoegen aan winkelwagen</button>
+          </form>
         </div>
       </div>';
     }

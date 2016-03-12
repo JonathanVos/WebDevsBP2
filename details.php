@@ -8,7 +8,6 @@ if(isset($_SESSION['username'])){
 		echo "FATAL: Connection failed.";
 		die ("Bleargh!");
 	}
-	echo "Connection Success!\n";
 
 	$username = $_SESSION['username'];
 	$sql = "SELECT voornaam, tussenvoegsel, achternaam, straatnaam, huisnummer, postcode, woonplaats, email, geslacht
@@ -33,7 +32,7 @@ if(isset($_SESSION['username'])){
 
 	function selectGeslacht($gevraagdGeslacht, $geslacht){
 		if($geslacht === $gevraagdGeslacht){
-			return 'selected="selected"';
+			return ' selected="selected"';
 		}
 		else{
 			return '';
@@ -61,8 +60,8 @@ if(isset($_SESSION['username'])){
                 </form>
             </td>
             <td>
-                <table>
-                	<form method="post" action="newAddress.php">
+                <form method="post" action="newAddress.php">
+                    <table>
                         <tr>
                             <td>Aanhef*<br>
                                 <select name="geslacht">
@@ -93,8 +92,8 @@ if(isset($_SESSION['username'])){
                             <td colspan="2">Telefoon*<br><input type="number" name=telefoon value="'.$telefoon.'"></td>
                             <td><button type="submit">Nieuw factuuradres</button></td>
                         </tr>
-                    </form>
-                </table>
+                    </table>
+                </form>
             </td>
         </tr>
     </table>';

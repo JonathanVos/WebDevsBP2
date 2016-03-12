@@ -20,8 +20,8 @@ if(!isset($_SESSION['username'])){
 else{
     echo '      <form class="login" method="post" action="log_out.php">
             <fieldset>
-              <a href="details.php">Gegevens</a>
               <legend>Hallo '.$_SESSION['username'].'</legend>
+              <a href="details.php">Gegevens</a><br />
               <input type="submit" value="Log out" />
             </fieldset>
           </form>';
